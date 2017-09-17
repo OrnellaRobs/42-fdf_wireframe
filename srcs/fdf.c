@@ -6,7 +6,7 @@
 /*   By: orazafin <orazafin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/12 18:24:20 by orazafin          #+#    #+#             */
-/*   Updated: 2017/09/15 22:45:35 by orazafin         ###   ########.fr       */
+/*   Updated: 2017/09/17 23:56:44 by orazafin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,10 @@ void		create_new_image(t_set *setting)
 void 		initialize_setting(int fd, t_set *setting)
 {
 	setting->map = get_map(fd, setting);
-	setting->color_relief = YELLOW;
-	setting->color_flat = BLUE;
+	setting->color_relief = ORANGE;
+	setting->color_flat = ORANGE;
+	setting->copy_color_relief = ORANGE;
+	setting->copy_color_flat = ORANGE;
 	setting->mlx = mlx_init();
 	// setting->relief = 0;
 	// setting->move_h = 0;

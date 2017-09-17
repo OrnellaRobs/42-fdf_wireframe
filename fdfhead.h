@@ -6,7 +6,7 @@
 /*   By: orazafin <orazafin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/08 13:20:36 by orazafin          #+#    #+#             */
-/*   Updated: 2017/09/15 22:44:00 by orazafin         ###   ########.fr       */
+/*   Updated: 2017/09/18 00:15:38 by orazafin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,12 +35,15 @@
 # define PINK 0xFE2E64
 # define X0 2
 # define Y0 2
+
 typedef struct		s_set
 {
 	int				**map;
 	int				color;
 	int				color_relief;
 	int				color_flat;
+	int				copy_color_relief;
+	int				copy_color_flat;
 	int				column;
 	int				line;
 	void			*mlx;
@@ -76,11 +79,15 @@ typedef struct		s_set
 
 int					main(int argc, char *argv[]);
 int			 		**get_map(int fd, t_set *setting);
-void 				draw_segment_horizontally(t_set *setting);
-void 				draw_segment_vertically(t_set *setting);
+void				draw_segment_horizontally(t_set *setting);
+void				draw_segment_vertically(t_set *setting);
 int					my_key_funct(int keycode, t_set *setting);
 void				create_new_image(t_set *setting);
 void				free_map(t_set *setting);
 void				write_on_window(t_set *setting, char *str, int color);
 void				draw(t_set *setting);
+void				initialize_bresenham(t_set *setting, int i, int j,
+	int sens);
+void				bresenham_algorithm(t_set *setting, int line, int column,
+	int sens);
 # endif

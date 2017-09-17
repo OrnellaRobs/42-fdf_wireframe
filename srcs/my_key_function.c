@@ -6,11 +6,11 @@
 /*   By: orazafin <orazafin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/13 11:07:15 by orazafin          #+#    #+#             */
-/*   Updated: 2017/09/15 23:00:38 by orazafin         ###   ########.fr       */
+/*   Updated: 2017/09/18 00:01:04 by orazafin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//RAJOUTER LES KEYCODE POUR + ET -
+//RAJOUTER LES KEYCODE POUR LES CHIFFRES DU CLAVIER NUMERIQUE
 #include "../fdfhead.h"
 
 void		swap_color(t_set *setting)
@@ -37,6 +37,8 @@ void		change_color_relief(int keycode, t_set *setting)
 		setting->color_relief = ORANGE;
 	else if (keycode == 16)
 		setting->color_relief = YELLOW;
+	else if (keycode == 35)
+		setting->color_relief = PINK;
 }
 
 void 		change_color_flat(int keycode, t_set *setting)
@@ -53,6 +55,8 @@ void 		change_color_flat(int keycode, t_set *setting)
 		setting->color_flat = ORANGE;
 	else if (keycode == 22 || keycode == 88)
 		setting->color_flat = YELLOW;
+	else if (keycode == 26)
+		setting->color_flat = PINK;
 }
 
 void 		swap_color_between_relief_and_flat(int keycode, t_set *setting)
@@ -80,8 +84,8 @@ void		reset(int keycode, t_set *setting)
 		setting->depth = 1;
 		setting->move_h = 0;
 		setting->move_v = 0;
-		setting->color_relief = YELLOW;
-		setting->color_flat = BLUE;
+		setting->color_relief = setting->copy_color_relief;
+		setting->color_flat = setting->copy_color_flat;
 		setting->zoom = 0;
 	}
 }
@@ -131,6 +135,7 @@ void		string_to_write_on_window(t_set *setting)
 	write_on_window(setting, "W -> WHITE", WHITE);
 	write_on_window(setting, "O -> ORANGE", ORANGE);
 	write_on_window(setting, "Y -> YELLOW", YELLOW);
+	write_on_window(setting, "P -> PINK", PINK);
 	write_on_window(setting, "\n", WHITE);
 	write_on_window(setting, "COLOR FLAT:", WHITE);
 	write_on_window(setting, "1 -> RED", RED);
@@ -139,6 +144,7 @@ void		string_to_write_on_window(t_set *setting)
 	write_on_window(setting, "4 -> WHITE", WHITE);
 	write_on_window(setting, "5 -> ORANGE", ORANGE);
 	write_on_window(setting, "6 -> YELLOW", YELLOW);
+	write_on_window(setting, "7 -> PINK", PINK);
 	setting->write_y += 450;
 	write_on_window(setting, "OTHERS OPTIONS:", PINK);
 	write_on_window(setting, "Q -> INCREASE RELIEF", WHITE);
