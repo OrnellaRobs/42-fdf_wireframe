@@ -1,1 +1,0 @@
-gcc -g -o fdf ./srcs/fdf.c ./srcs/draw_bresenham_algorithm.c ./srcs/ft_parsing.c ./srcs/my_key_function.c ./srcs/draw_segment_horizontally.c ./srcs/draw_segment_vertically.c  Libft/libft.a minilibx_macos/libmlx.a -framework OpenGl -framework AppKit
