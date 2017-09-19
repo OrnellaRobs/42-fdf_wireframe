@@ -6,7 +6,7 @@
 #    By: orazafin <orazafin@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/09/13 15:07:06 by orazafin          #+#    #+#              #
-#    Updated: 2017/09/20 00:35:41 by orazafin         ###   ########.fr        #
+#    Updated: 2017/09/20 00:40:50 by orazafin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,6 +21,14 @@ FR = -framework
 OGL = OpenGl
 
 AKT = AppKit
+
+BLUE = \x1b[34m
+GREEN = \x1b[32m
+RED = \x1b[31m
+YELLOW = \x1b[33m
+CYAN = \x1b[36m
+B = \x1b[1m
+EOC = \x1b[0m
 
 SRCS_FDF = srcs/change_color.c\
 			srcs/change_relief.c\
@@ -44,20 +52,20 @@ OBJS_FILLIT = (SRCS_FILLIT:.c=.o)
 all : $(NAME)
 
 $(NAME):
-	@echo "compiling fdf..."
+	@echo "$(B)$(BLUE)compiling fdf...$(EOC)"
 	@make -C Libft
 	@gcc -g -o $(NAME) $(SRCS_FDF) $(NAME_LIB) $(LIBX) $(FR) $(OGL) $(FR) $(AKT)
 	@echo "fdf done"
 
 clean :
-	@echo "deleting objects..."
+	@echo "$(B)$(YELLOW)deleting objects...$(EOC)"
 	@make -C Libft clean
-	@echo "deleting done"
+	@echo "$(CYAN)deleting done $(B)$(GREEN)✔$(EOC)"
 
 fclean : clean
-	@echo "deleting library and fdf..."
+	@echo "$(B)$(RED)deleting library and fdf...$(EOC)"
 	@make -C Libft fclean
 	@rm -f $(NAME)
-	@echo "deleting done"
+	@echo "$(CYAN)deleting done $(B)$(GREEN)✔$(EOC)"
 
 re : fclean all
