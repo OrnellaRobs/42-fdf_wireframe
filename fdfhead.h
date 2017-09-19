@@ -6,7 +6,7 @@
 /*   By: orazafin <orazafin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/08 13:20:36 by orazafin          #+#    #+#             */
-/*   Updated: 2017/09/19 19:15:03 by orazafin         ###   ########.fr       */
+/*   Updated: 2017/09/19 23:53:10 by orazafin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,6 +79,10 @@ typedef struct		s_set
 }					t_set;
 
 int					main(int argc, char *argv[]);
+void				change_color_relief(int keycode, t_set *setting);
+void				change_color_flat(int keycode, t_set *setting);
+void				swap_color_between_relief_and_flat(int keycode,
+	t_set *setting);
 int			 		**get_map(int fd, t_set *setting);
 int					check_valid_map(char **tab);
 void				free_first_tab(char **tab);
@@ -87,11 +91,18 @@ void				draw_segment_vertically(t_set *setting);
 int					my_key_funct(int keycode, t_set *setting);
 void				create_new_image(t_set *setting);
 void				free_int_tab(t_set *setting);
+int					open_file(char *av);
 void				write_on_window(t_set *setting, char *str, int color);
+void				write_welcome_message(t_set *setting);
+void				write_option_to_change_color_flat(t_set *setting);
+void				write_option_to_change_color_relief(t_set *setting);
+void				write_other_options(t_set *setting);
+void				check_how_many_map(int argc);
 void				draw(t_set *setting);
 void				initialize_bresenham(t_set *setting, int i, int j,
 	int sens);
 void				bresenham_algorithm(t_set *setting, int line, int column,
 	int sens);
 void				initialize_write_x_and_write_y(t_set *setting);
+void				swap_color(t_set *setting);
 # endif

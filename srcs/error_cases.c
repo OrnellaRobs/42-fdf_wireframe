@@ -6,11 +6,25 @@
 /*   By: orazafin <orazafin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/19 19:08:51 by orazafin          #+#    #+#             */
-/*   Updated: 2017/09/19 19:10:23 by orazafin         ###   ########.fr       */
+/*   Updated: 2017/09/19 23:42:03 by orazafin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../fdfhead.h"
+
+void		check_how_many_map(int argc)
+{
+	if (argc == 1)
+	{
+		ft_putstr("usage: ./fdf map\n");
+		exit(EXIT_FAILURE);
+	}
+	else if (argc > 2)
+	{
+		ft_putstr("Too much map. Select only one.\n");
+		exit(EXIT_FAILURE);
+	}
+}
 
 int				check_valid_map(char **tab)
 {

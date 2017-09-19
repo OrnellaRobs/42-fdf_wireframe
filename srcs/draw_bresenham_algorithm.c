@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   draw.c                                             :+:      :+:    :+:   */
+/*   draw_bresenham_algorithm.c                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: orazafin <orazafin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/14 15:43:45 by orazafin          #+#    #+#             */
-/*   Updated: 2017/09/18 00:13:52 by orazafin         ###   ########.fr       */
+/*   Updated: 2017/09/19 22:34:56 by orazafin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ void		initialize_bresenham(t_set *setting, int i, int j, int sens)
 	setting->err = (setting->dx > setting->dy ? setting->dx : -setting->dy) / 2;
 }
 
-void 		check_color(t_set *setting, int i, int j, int sens)
+static void		check_color(t_set *setting, int i, int j, int sens)
 {
 	if (sens > 0 && setting->map[i][j] != 0 && j + 1 < setting->column &&
 		setting->map[i][j + 1] != 0 && setting->flag == 1)
@@ -54,7 +54,8 @@ void 		check_color(t_set *setting, int i, int j, int sens)
 		setting->color = setting->color_flat;
 }
 
-void		bresenham_algorithm(t_set *setting, int line, int column, int sens)
+void			bresenham_algorithm(t_set *setting, int line, int column,
+	int sens)
 {
 	while(1)
 	{

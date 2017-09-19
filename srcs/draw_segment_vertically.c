@@ -6,13 +6,13 @@
 /*   By: orazafin <orazafin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/18 00:11:09 by orazafin          #+#    #+#             */
-/*   Updated: 2017/09/18 00:14:04 by orazafin         ###   ########.fr       */
+/*   Updated: 2017/09/19 23:46:32 by orazafin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "../fdfhead.h"
+#include "../fdfhead.h"
 
-void		apply_bresenham_for_each_line(t_set *setting, int i, int j,
+static void		apply_bresenham_for_each_line(t_set *setting, int i, int j,
 	int sens)
 {
 	while (i < setting->line - 1)
@@ -33,7 +33,7 @@ void		apply_bresenham_for_each_line(t_set *setting, int i, int j,
 	}
 }
 
-void		draw_segment_vertically(t_set *setting)
+void			draw_segment_vertically(t_set *setting)
 {
 	int i;
 	int j;
