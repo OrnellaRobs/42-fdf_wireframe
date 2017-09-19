@@ -6,7 +6,7 @@
 /*   By: orazafin <orazafin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/08 13:20:36 by orazafin          #+#    #+#             */
-/*   Updated: 2017/09/19 23:53:10 by orazafin         ###   ########.fr       */
+/*   Updated: 2017/09/20 00:09:57 by orazafin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,4 +105,9 @@ void				bresenham_algorithm(t_set *setting, int line, int column,
 	int sens);
 void				initialize_write_x_and_write_y(t_set *setting);
 void				swap_color(t_set *setting);
+void				increase_relief(int keycode, t_set *setting);
+void				decrease_relief(int keycode, t_set *setting);
+void				move_map(int keycode, t_set *setting);
+void				zoom(int keycode, t_set *setting);
+
 # endif

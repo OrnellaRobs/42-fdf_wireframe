@@ -6,7 +6,7 @@
 /*   By: orazafin <orazafin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/18 00:11:09 by orazafin          #+#    #+#             */
-/*   Updated: 2017/09/19 23:46:32 by orazafin         ###   ########.fr       */
+/*   Updated: 2017/09/20 00:04:31 by orazafin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,9 +35,9 @@ static void		apply_bresenham_for_each_line(t_set *setting, int i, int j,
 
 void			draw_segment_vertically(t_set *setting)
 {
-	int i;
-	int j;
-	int sens;
+	int	i;
+	int	j;
+	int	sens;
 
 	sens = -1;
 	j = 0;
