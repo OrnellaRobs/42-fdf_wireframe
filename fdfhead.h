@@ -6,7 +6,7 @@
 /*   By: orazafin <orazafin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/08 13:20:36 by orazafin          #+#    #+#             */
-/*   Updated: 2017/09/19 16:37:10 by orazafin         ###   ########.fr       */
+/*   Updated: 2017/09/19 19:15:03 by orazafin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,11 +80,13 @@ typedef struct		s_set
 
 int					main(int argc, char *argv[]);
 int			 		**get_map(int fd, t_set *setting);
+int					check_valid_map(char **tab);
+void				free_first_tab(char **tab);
 void				draw_segment_horizontally(t_set *setting);
 void				draw_segment_vertically(t_set *setting);
 int					my_key_funct(int keycode, t_set *setting);
 void				create_new_image(t_set *setting);
-void				free_map(t_set *setting);
+void				free_int_tab(t_set *setting);
 void				write_on_window(t_set *setting, char *str, int color);
 void				draw(t_set *setting);
 void				initialize_bresenham(t_set *setting, int i, int j,

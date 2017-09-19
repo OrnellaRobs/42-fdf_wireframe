@@ -6,7 +6,7 @@
 /*   By: orazafin <orazafin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/13 11:07:15 by orazafin          #+#    #+#             */
-/*   Updated: 2017/09/18 00:26:11 by orazafin         ###   ########.fr       */
+/*   Updated: 2017/09/19 19:15:26 by orazafin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -181,7 +181,7 @@ int			my_key_funct(int keycode, t_set *setting)
 	printf("key event %d\n", keycode);
 	if (keycode == 53)
 	{
-		free_map(setting);
+		free_int_tab(setting);
 		exit(EXIT_SUCCESS);
 	}
 	else

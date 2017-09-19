@@ -6,7 +6,7 @@
 /*   By: orazafin <orazafin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/12 18:24:20 by orazafin          #+#    #+#             */
-/*   Updated: 2017/09/19 17:02:11 by orazafin         ###   ########.fr       */
+/*   Updated: 2017/09/19 21:52:25 by orazafin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,11 @@ void		create_new_image(t_set *setting)
 
 void 		initialize_setting(int fd, t_set *setting)
 {
-	printf("Avant appel fonction\n");
-	setting->map = get_map(fd, setting);
-	printf("Apres appel fonction\n");
+	if ((setting->map = get_map(fd, setting)) == NULL)
+	{
+		ft_putstr("Invalid map.\n");
+		exit(EXIT_FAILURE);
+	}
 	setting->color_relief = ORANGE;
 	setting->color_flat = ORANGE;
 	setting->copy_color_relief = ORANGE;
@@ -34,7 +36,7 @@ void 		initialize_setting(int fd, t_set *setting)
 	create_new_image(setting);
 }
 
-void		free_map(t_set *setting)
+void		free_int_tab(t_set *setting)
 {
 	int i;
 
@@ -54,30 +56,22 @@ void 		draw(t_set *setting)
 	mlx_put_image_to_window(setting->mlx, setting->win, setting->img, 0, 0);
 }
 
-int			main(int argc, char *argv[])
+void		check_how_many_map(int argc)
 {
-	int			fd;
-	t_set		*setting;
-
-	printf("OK\n");
-
 	if (argc == 1)
 	{
 		ft_putstr("usage: ./fdf map\n");
-		return (0);
+		exit(EXIT_FAILURE);
 	}
 	else if (argc > 2)
 	{
 		ft_putstr("Too much map. Select only one.\n");
-		return (0);
+		exit(EXIT_FAILURE);
 	}
-	if (!(setting = malloc(sizeof(t_set))))
-		return (-1);
-	if ((fd = open(argv[1], O_RDONLY)) == -1)
-		return (-1);
-	ft_bzero(setting, sizeof(t_set));
-	initialize_setting(fd, setting);
-	draw(setting);
+}
+
+void		write_welcome_message(t_set *setting)
+{
 	setting->write_x = 500;
 	setting->write_y = 50;
 	write_on_window(setting, "WELCOME ON FDF - WIREFRAME", ORANGE);
@@ -85,8 +79,46 @@ int			main(int argc, char *argv[])
 	setting->write_y += 15;
 	write_on_window(setting, "- Press the spacebar to BEGIN -", PINK);
 	initialize_write_x_and_write_y(setting);
+}
+
+int			check_file(int fd)
+{
+	char buf[1];
+	if (read(fd, buf, 1) <= 0)
+		return (-1);
+	return (1);
+}
+
+int			open_file(char *av)
+{
+	int fd;
+
+	fd = open(av, O_RDONLY);
+	if (fd < 0)
+	{
+		perror(av);
+		exit(EXIT_FAILURE);
+	}
+	if (check_file(fd) == -1)
+		return (0);
+	return (fd);
+}
+int			main(int argc, char *argv[])
+{
+	int			fd;
+	t_set		*setting;
+
+	check_how_many_map(argc);
+	if (!(setting = malloc(sizeof(t_set))))
+		return (-1);
+	if (!(fd = open_file(argv[1])))
+		return (-1);
+	ft_bzero(setting, sizeof(t_set));
+	initialize_setting(fd, setting);
+	draw(setting);
+	write_welcome_message(setting);
 	mlx_hook(setting->win, 2, (1L >> 0), my_key_funct, setting);
 	mlx_loop(setting->mlx);
-	free_map(setting);
+	free_int_tab(setting);
 	return (0);
 }

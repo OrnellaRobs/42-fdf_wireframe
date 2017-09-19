@@ -6,17 +6,17 @@
 /*   By: orazafin <orazafin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/19 16:36:28 by orazafin          #+#    #+#             */
-/*   Updated: 2017/09/19 17:02:02 by orazafin         ###   ########.fr       */
+/*   Updated: 2017/09/19 19:12:37 by orazafin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../fdfhead.h"
 
-int					how_many_column(char *line)
+static int		how_many_column(char *line)
 {
-	int i;
-	int count;
-	int flag;
+	int	i;
+	int	count;
+	int	flag;
 
 	i = 0;
 	count = 0;
@@ -35,11 +35,11 @@ int					how_many_column(char *line)
 	return (count);
 }
 
-char 				**parsing(int fd, t_set *setting)
+static char 	**parsing(int fd, t_set *setting)
 {
 	char	*line;
 	char	**tab;
-	char 	**split;
+	char	**split;
 	int		nb_column;
 	int		i;
 
@@ -61,7 +61,8 @@ char 				**parsing(int fd, t_set *setting)
 	return (tab);
 }
 
-static int      *convert_line_into_int_tab(int *map, char **split, t_set *setting)
+static int		*convert_line_into_int_tab(int *map, char **split,
+	t_set *setting)
 {
 	int i;
 
@@ -72,7 +73,6 @@ static int      *convert_line_into_int_tab(int *map, char **split, t_set *settin
 		i++;
 	}
 	i = 0;
-	// printf("AVANT\n");
 	while (i < setting->column_max)
 	{
 		printf("%d ", map[i]);
@@ -95,7 +95,7 @@ static int		*initialize_tab_with_zero(int *map, t_set *setting)
 	return (map);
 }
 
-int			 		**get_map(int fd, t_set *setting)
+int				**get_map(int fd, t_set *setting)
 {
 	char	**first_tab;
 	int		**final_tab;
@@ -111,11 +111,14 @@ int			 		**get_map(int fd, t_set *setting)
 		if (!(final_tab[i] = malloc(sizeof(int) * setting->column_max)))
 			return (NULL);
 		split = ft_strsplit(first_tab[i], ' ');
+		if (check_valid_map(split) == 1)
+			return (NULL);
 		final_tab[i] = initialize_tab_with_zero(final_tab[i], setting);
 		final_tab[i] =  convert_line_into_int_tab(final_tab[i], split, setting);
 		i++;
 	}
 	final_tab[i] = NULL;
 	setting->column = setting->column_max;
+	free_first_tab(first_tab);
 	return (final_tab);
 }
