@@ -6,7 +6,7 @@
 /*   By: orazafin <orazafin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/19 16:36:28 by orazafin          #+#    #+#             */
-/*   Updated: 2017/09/19 19:12:37 by orazafin         ###   ########.fr       */
+/*   Updated: 2017/09/20 00:13:36 by orazafin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,13 +72,6 @@ static int		*convert_line_into_int_tab(int *map, char **split,
 		map[i] = ft_atoi(split[i]);
 		i++;
 	}
-	i = 0;
-	while (i < setting->column_max)
-	{
-		printf("%d ", map[i]);
-		i++;
-	}
-	printf("\n");
 	return (map);
 }
 

@@ -6,7 +6,7 @@
 /*   By: orazafin <orazafin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/13 11:07:15 by orazafin          #+#    #+#             */
-/*   Updated: 2017/09/20 00:10:13 by orazafin         ###   ########.fr       */
+/*   Updated: 2017/09/20 00:14:25 by orazafin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,6 @@ void		string_to_write_on_window(t_set *setting)
 
 int			my_key_funct(int keycode, t_set *setting)
 {
-	printf("key event %d\n", keycode);
 	if (keycode == 53)
 	{
 		free_int_tab(setting);
