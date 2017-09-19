@@ -6,7 +6,7 @@
 /*   By: orazafin <orazafin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/08 13:20:36 by orazafin          #+#    #+#             */
-/*   Updated: 2017/09/18 00:15:38 by orazafin         ###   ########.fr       */
+/*   Updated: 2017/09/19 16:37:10 by orazafin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,7 @@ typedef struct		s_set
 	int				copy_color_relief;
 	int				copy_color_flat;
 	int				column;
+	int				column_max;
 	int				line;
 	void			*mlx;
 	void			*win;
@@ -90,4 +91,5 @@ void				initialize_bresenham(t_set *setting, int i, int j,
 	int sens);
 void				bresenham_algorithm(t_set *setting, int line, int column,
 	int sens);
+void				initialize_write_x_and_write_y(t_set *setting);
 # endif

@@ -6,7 +6,7 @@
 /*   By: orazafin <orazafin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/12 18:24:20 by orazafin          #+#    #+#             */
-/*   Updated: 2017/09/17 23:56:44 by orazafin         ###   ########.fr       */
+/*   Updated: 2017/09/19 17:02:11 by orazafin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,16 +21,14 @@ void		create_new_image(t_set *setting)
 
 void 		initialize_setting(int fd, t_set *setting)
 {
+	printf("Avant appel fonction\n");
 	setting->map = get_map(fd, setting);
+	printf("Apres appel fonction\n");
 	setting->color_relief = ORANGE;
 	setting->color_flat = ORANGE;
 	setting->copy_color_relief = ORANGE;
 	setting->copy_color_flat = ORANGE;
 	setting->mlx = mlx_init();
-	// setting->relief = 0;
-	// setting->move_h = 0;
-	// setting->move_v = 0;
-	// setting->zoom = 0;
 	setting->depth = 1;
 	setting->win = mlx_new_window(setting->mlx, WIDTH, HEIGHT, "FdF");
 	create_new_image(setting);
@@ -61,6 +59,18 @@ int			main(int argc, char *argv[])
 	int			fd;
 	t_set		*setting;
 
+	printf("OK\n");
+
+	if (argc == 1)
+	{
+		ft_putstr("usage: ./fdf map\n");
+		return (0);
+	}
+	else if (argc > 2)
+	{
+		ft_putstr("Too much map. Select only one.\n");
+		return (0);
+	}
 	if (!(setting = malloc(sizeof(t_set))))
 		return (-1);
 	if ((fd = open(argv[1], O_RDONLY)) == -1)
@@ -74,8 +84,7 @@ int			main(int argc, char *argv[])
 	setting->write_x = 480;
 	setting->write_y += 15;
 	write_on_window(setting, "- Press the spacebar to BEGIN -", PINK);
-	setting->write_x = 15;
-	setting->write_y = 15;
+	initialize_write_x_and_write_y(setting);
 	mlx_hook(setting->win, 2, (1L >> 0), my_key_funct, setting);
 	mlx_loop(setting->mlx);
 	free_map(setting);

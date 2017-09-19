@@ -6,7 +6,7 @@
 /*   By: orazafin <orazafin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/13 11:07:15 by orazafin          #+#    #+#             */
-/*   Updated: 2017/09/18 00:01:04 by orazafin         ###   ########.fr       */
+/*   Updated: 2017/09/18 00:26:11 by orazafin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@ void		swap_color(t_set *setting)
 	color = setting->color_relief;
 	setting->color_relief = setting->color_flat;
 	setting->color_flat = color;
-	printf("color relief = %d | color flat = %d\n", setting->color_relief, setting->color_flat);
 }
 
 void		change_color_relief(int keycode, t_set *setting)
@@ -41,7 +40,7 @@ void		change_color_relief(int keycode, t_set *setting)
 		setting->color_relief = PINK;
 }
 
-void 		change_color_flat(int keycode, t_set *setting)
+void		change_color_flat(int keycode, t_set *setting)
 {
 	if (keycode == 83 || keycode == 18)
 		setting->color_flat = RED;
@@ -59,7 +58,7 @@ void 		change_color_flat(int keycode, t_set *setting)
 		setting->color_flat = PINK;
 }
 
-void 		swap_color_between_relief_and_flat(int keycode, t_set *setting)
+void		swap_color_between_relief_and_flat(int keycode, t_set *setting)
 {
 	if (keycode == 258)
 		swap_color(setting);
@@ -119,14 +118,25 @@ void		zoom(int keycode, t_set *setting)
 		setting->zoom -= 5;
 }
 
-void 		write_on_window(t_set *setting, char *str, int color)
+void		write_on_window(t_set *setting, char *str, int color)
 {
 	mlx_string_put(setting->mlx, setting->win,
 		setting->write_x, setting->write_y, color, str);
 	setting->write_y += 20;
 }
 
-void		string_to_write_on_window(t_set *setting)
+void 		write_option_to_change_color_flat(t_set *setting)
+{
+	write_on_window(setting, "COLOR FLAT:", WHITE);
+	write_on_window(setting, "1 -> RED", RED);
+	write_on_window(setting, "2 -> GREEN", GREEN);
+	write_on_window(setting, "3 -> BLUE", BLUE);
+	write_on_window(setting, "4 -> WHITE", WHITE);
+	write_on_window(setting, "5 -> ORANGE", ORANGE);
+	write_on_window(setting, "6 -> YELLOW", YELLOW);
+	write_on_window(setting, "7 -> PINK", PINK);
+}
+void 		write_option_to_change_color_relief(t_set *setting)
 {
 	write_on_window(setting, "COLOR RELIEF:", WHITE);
 	write_on_window(setting, "R -> RED", RED);
@@ -136,16 +146,10 @@ void		string_to_write_on_window(t_set *setting)
 	write_on_window(setting, "O -> ORANGE", ORANGE);
 	write_on_window(setting, "Y -> YELLOW", YELLOW);
 	write_on_window(setting, "P -> PINK", PINK);
-	write_on_window(setting, "\n", WHITE);
-	write_on_window(setting, "COLOR FLAT:", WHITE);
-	write_on_window(setting, "1 -> RED", RED);
-	write_on_window(setting, "2 -> GREEN", GREEN);
-	write_on_window(setting, "3 -> BLUE", BLUE);
-	write_on_window(setting, "4 -> WHITE", WHITE);
-	write_on_window(setting, "5 -> ORANGE", ORANGE);
-	write_on_window(setting, "6 -> YELLOW", YELLOW);
-	write_on_window(setting, "7 -> PINK", PINK);
-	setting->write_y += 450;
+}
+
+void 		write_other_options(t_set *setting)
+{
 	write_on_window(setting, "OTHERS OPTIONS:", PINK);
 	write_on_window(setting, "Q -> INCREASE RELIEF", WHITE);
 	write_on_window(setting, "Z -> DECREASE RELIEF", WHITE);
@@ -156,10 +160,23 @@ void		string_to_write_on_window(t_set *setting)
 	write_on_window(setting, "left arrow key -> MOVE LEFT", WHITE);
 	write_on_window(setting, "right arrow key -> MOVE RIGHT", WHITE);
 	write_on_window(setting, "shift -> SWAP COLOR", WHITE);
+}
+
+void 		initialize_write_x_and_write_y(t_set *setting)
+{
 	setting->write_x = 15;
 	setting->write_y = 15;
 }
-int 		my_key_funct(int keycode, t_set *setting)
+void		string_to_write_on_window(t_set *setting)
+{
+	write_option_to_change_color_relief(setting);
+	write_on_window(setting, "\n", WHITE);
+	write_option_to_change_color_flat(setting);
+	setting->write_y += 450;
+	write_other_options(setting);
+	initialize_write_x_and_write_y(setting);
+}
+int			my_key_funct(int keycode, t_set *setting)
 {
 	printf("key event %d\n", keycode);
 	if (keycode == 53)
