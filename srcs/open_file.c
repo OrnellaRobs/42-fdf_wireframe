@@ -6,13 +6,13 @@
 /*   By: orazafin <orazafin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/19 22:47:38 by orazafin          #+#    #+#             */
-/*   Updated: 2017/09/19 22:47:59 by orazafin         ###   ########.fr       */
+/*   Updated: 2017/09/20 00:46:30 by orazafin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../fdfhead.h"
 
-static int			check_file(int fd)
+static int		check_file(int fd)
 {
 	char buf[1];
 	if (read(fd, buf, 1) <= 0)
@@ -20,7 +20,7 @@ static int			check_file(int fd)
 	return (1);
 }
 
-int					open_file(char *av)
+int				open_file(char *av)
 {
 	int fd;
 

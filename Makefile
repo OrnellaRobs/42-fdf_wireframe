@@ -6,7 +6,7 @@
 #    By: orazafin <orazafin@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/09/13 15:07:06 by orazafin          #+#    #+#              #
-#    Updated: 2017/09/20 00:40:50 by orazafin         ###   ########.fr        #
+#    Updated: 2017/09/20 00:47:27 by orazafin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,7 +37,7 @@ SRCS_FDF = srcs/change_color.c\
 			srcs/draw_segment_horizontally.c\
 			srcs/draw_segment_vertically.c\
 			srcs/error_cases.c\
-			srcs/fdf.c\
+			srcs/main.c\
 			srcs/free_int_tab.c\
 			srcs/free_tab_parsing.c\
 			srcs/move_map_and_zoom.c\

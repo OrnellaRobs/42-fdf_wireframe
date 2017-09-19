@@ -6,10 +6,11 @@
 /*   By: orazafin <orazafin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/19 23:48:55 by orazafin          #+#    #+#             */
-/*   Updated: 2017/09/19 23:49:29 by orazafin         ###   ########.fr       */
+/*   Updated: 2017/09/20 00:43:13 by orazafin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+//AJOUTER POUR PINK LE CLAVIER NUMERIQUE
 #include "../fdfhead.h"
 
 void		swap_color(t_set *setting)

@@ -6,11 +6,10 @@
 /*   By: orazafin <orazafin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/13 11:07:15 by orazafin          #+#    #+#             */
-/*   Updated: 2017/09/20 00:14:25 by orazafin         ###   ########.fr       */
+/*   Updated: 2017/09/20 00:45:50 by orazafin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//RAJOUTER LES KEYCODE POUR LES CHIFFRES DU CLAVIER NUMERIQUE
 #include "../fdfhead.h"
 
 void		reset(int keycode, t_set *setting)
