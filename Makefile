@@ -6,7 +6,7 @@
 #    By: orazafin <orazafin@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/09/13 15:07:06 by orazafin          #+#    #+#              #
-#    Updated: 2017/09/20 00:47:27 by orazafin         ###   ########.fr        #
+#    Updated: 2017/09/20 18:07:43 by orazafin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -47,14 +47,12 @@ SRCS_FDF = srcs/change_color.c\
 
 FLAGS += -Wall -Wextra -Werror
 
-OBJS_FILLIT = (SRCS_FILLIT:.c=.o)
-
 all : $(NAME)
 
 $(NAME):
 	@echo "$(B)$(BLUE)compiling fdf...$(EOC)"
 	@make -C Libft
-	@gcc -g -o $(NAME) $(SRCS_FDF) $(NAME_LIB) $(LIBX) $(FR) $(OGL) $(FR) $(AKT)
+	@gcc -o $(NAME) $(SRCS_FDF) $(NAME_LIB) $(LIBX) $(FR) $(OGL) $(FR) $(AKT)
 	@echo "fdf done"
 
 clean :

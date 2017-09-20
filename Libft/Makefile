@@ -6,7 +6,7 @@
 #    By: orazafin <orazafin@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/21 11:58:30 by orazafin          #+#    #+#              #
-#    Updated: 2017/05/29 20:46:17 by orazafin         ###   ########.fr        #
+#    Updated: 2017/09/20 18:08:12 by orazafin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -39,8 +39,8 @@ all : $(NAME)
 
 $(NAME):
 	@$(GCC) -c $(SRCS) -I $(HEADER)
-	ar rc $(NAME) $(OBJ)
-	ranlib $(NAME)
+	@ar rc $(NAME) $(OBJ)
+	@ranlib $(NAME)
 
 clean:
 	@rm -f $(OBJ)
