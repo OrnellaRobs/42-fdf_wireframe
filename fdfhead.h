@@ -6,7 +6,7 @@
 /*   By: orazafin <orazafin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/08 13:20:36 by orazafin          #+#    #+#             */
-/*   Updated: 2017/09/20 14:24:17 by orazafin         ###   ########.fr       */
+/*   Updated: 2017/09/20 14:25:54 by orazafin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define FDFHEAD_H
 
 # include "./Libft/libft.h"
+# include <stdio.h>
 # include <fcntl.h>
 # include <sys/types.h>
 # include <sys/uio.h>
