@@ -6,7 +6,7 @@
 /*   By: orazafin <orazafin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/19 16:36:28 by orazafin          #+#    #+#             */
-/*   Updated: 2017/09/20 00:46:42 by orazafin         ###   ########.fr       */
+/*   Updated: 2017/09/20 14:21:25 by orazafin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ static int		how_many_column(char *line)
 	return (count);
 }
 
-static char 	**parsing(int fd, t_set *setting)
+static char		**parsing(int fd, t_set *setting)
 {
 	char	*line;
 	char	**tab;
@@ -105,7 +105,7 @@ int				**get_map(int fd, t_set *setting)
 		if (check_valid_map(split) == 1)
 			return (NULL);
 		final_tab[i] = initialize_tab_with_zero(final_tab[i], setting);
-		final_tab[i] =  convert_line_into_int_tab(final_tab[i], split);
+		final_tab[i] = convert_line_into_int_tab(final_tab[i], split);
 		i++;
 	}
 	final_tab[i] = NULL;

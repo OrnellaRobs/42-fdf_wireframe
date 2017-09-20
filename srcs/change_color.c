@@ -6,11 +6,10 @@
 /*   By: orazafin <orazafin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/19 23:48:55 by orazafin          #+#    #+#             */
-/*   Updated: 2017/09/20 00:43:13 by orazafin         ###   ########.fr       */
+/*   Updated: 2017/09/20 14:16:58 by orazafin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//AJOUTER POUR PINK LE CLAVIER NUMERIQUE
 #include "../fdfhead.h"
 
 void		swap_color(t_set *setting)
@@ -54,7 +53,7 @@ void		change_color_flat(int keycode, t_set *setting)
 		setting->color_flat = ORANGE;
 	else if (keycode == 22 || keycode == 88)
 		setting->color_flat = YELLOW;
-	else if (keycode == 26)
+	else if (keycode == 26 || keycode == 89)
 		setting->color_flat = PINK;
 }
 

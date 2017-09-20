@@ -6,7 +6,7 @@
 /*   By: orazafin <orazafin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/18 00:11:09 by orazafin          #+#    #+#             */
-/*   Updated: 2017/09/20 00:15:16 by orazafin         ###   ########.fr       */
+/*   Updated: 2017/09/20 14:19:45 by orazafin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ static void		apply_bresenham_for_each_line(t_set *setting, int i, int j,
 {
 	while (i < setting->line - 1)
 	{
-		initialize_bresenham(setting, i ,j, sens);
+		initialize_bresenham(setting, i, j, sens);
 		if (setting->map[i][j] >= setting->map[i + 1][j])
 		{
 			setting->flag = 1;

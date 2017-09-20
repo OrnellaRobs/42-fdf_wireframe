@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fdf.c                                              :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: orazafin <orazafin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/12 18:24:20 by orazafin          #+#    #+#             */
-/*   Updated: 2017/09/19 23:47:06 by orazafin         ###   ########.fr       */
+/*   Updated: 2017/09/20 14:14:31 by orazafin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ int				main(int argc, char *argv[])
 	draw(setting);
 	write_welcome_message(setting);
 	mlx_hook(setting->win, 2, (1L >> 0), my_key_funct, setting);
+	mlx_hook(setting->win, 17, (1L << 17), proper_exit, setting);
 	mlx_loop(setting->mlx);
-	free_int_tab(setting);
 	return (0);
 }

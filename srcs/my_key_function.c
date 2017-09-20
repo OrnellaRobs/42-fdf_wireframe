@@ -6,7 +6,7 @@
 /*   By: orazafin <orazafin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/13 11:07:15 by orazafin          #+#    #+#             */
-/*   Updated: 2017/09/20 00:45:50 by orazafin         ###   ########.fr       */
+/*   Updated: 2017/09/20 14:21:48 by orazafin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void		reset(int keycode, t_set *setting)
 	}
 }
 
-void 		initialize_write_x_and_write_y(t_set *setting)
+void		initialize_write_x_and_write_y(t_set *setting)
 {
 	setting->write_x = 15;
 	setting->write_y = 15;
@@ -41,12 +41,20 @@ void		string_to_write_on_window(t_set *setting)
 	initialize_write_x_and_write_y(setting);
 }
 
+int			proper_exit(t_set *setting)
+{
+	ft_bzero(setting, sizeof(t_set));
+	free_int_tab(setting);
+	exit(EXIT_SUCCESS);
+	return (0);
+}
+
 int			my_key_funct(int keycode, t_set *setting)
 {
 	if (keycode == 53)
 	{
 		free_int_tab(setting);
-		exit(EXIT_SUCCESS);
+		proper_exit(setting);
 	}
 	else
 	{

@@ -6,7 +6,7 @@
 /*   By: orazafin <orazafin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/08 13:20:36 by orazafin          #+#    #+#             */
-/*   Updated: 2017/09/20 00:09:57 by orazafin         ###   ########.fr       */
+/*   Updated: 2017/09/20 14:11:51 by orazafin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,6 +88,7 @@ int					check_valid_map(char **tab);
 void				free_first_tab(char **tab);
 void				draw_segment_horizontally(t_set *setting);
 void				draw_segment_vertically(t_set *setting);
+int					proper_exit(t_set *setting);
 int					my_key_funct(int keycode, t_set *setting);
 void				create_new_image(t_set *setting);
 void				free_int_tab(t_set *setting);

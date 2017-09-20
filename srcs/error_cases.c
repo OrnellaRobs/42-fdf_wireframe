@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check_valid_map.c                                  :+:      :+:    :+:   */
+/*   error_cases.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: orazafin <orazafin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/19 19:08:51 by orazafin          #+#    #+#             */
-/*   Updated: 2017/09/19 23:42:03 by orazafin         ###   ########.fr       */
+/*   Updated: 2017/09/20 14:18:09 by orazafin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void		check_how_many_map(int argc)
 	}
 }
 
-int				check_valid_map(char **tab)
+int			check_valid_map(char **tab)
 {
 	int i;
 	int j;
@@ -39,7 +39,7 @@ int				check_valid_map(char **tab)
 		{
 			if (tab[i][j] != '-')
 			{
-				if (tab[i][j] < '0' || tab[i][j] > '9' )
+				if (tab[i][j] < '0' || tab[i][j] > '9')
 					return (1);
 			}
 			else

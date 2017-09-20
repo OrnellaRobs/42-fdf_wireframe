@@ -6,13 +6,13 @@
 /*   By: orazafin <orazafin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/14 15:43:45 by orazafin          #+#    #+#             */
-/*   Updated: 2017/09/20 00:03:35 by orazafin         ###   ########.fr       */
+/*   Updated: 2017/09/20 14:21:01 by orazafin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../fdfhead.h"
 
-void		initialize_bresenham(t_set *setting, int i, int j, int sens)
+void			initialize_bresenham(t_set *setting, int i, int j, int sens)
 {
 	setting->x0 = setting->w - setting->h;
 	setting->y0 = (setting->w + setting->h -
@@ -40,13 +40,13 @@ static void		check_color(t_set *setting, int i, int j, int sens)
 {
 	if (sens > 0 && setting->map[i][j] != 0 && j + 1 < setting->column &&
 		setting->map[i][j + 1] != 0 && setting->flag == 1)
-			setting->color = setting->color_relief;
+		setting->color = setting->color_relief;
 	else if (sens > 0 && setting->map[i][j] != 0 && j - 1 >= 0 &&
 		setting->map[i][j - 1] != 0 && setting->flag == -1)
 		setting->color = setting->color_relief;
 	else if (sens < 0 && setting->map[i][j] != 0 && i + 1 < setting->line &&
-		setting->map[i + 1][j] != 0 && setting->flag == 1)
-			setting->color = setting->color_relief;
+	setting->map[i + 1][j] != 0 && setting->flag == 1)
+		setting->color = setting->color_relief;
 	else if (sens < 0 && setting->map[i][j] != 0 && i - 1 >= 0 &&
 		setting->map[i - 1][j] != 0 && setting->flag == -1)
 		setting->color = setting->color_relief;
@@ -57,7 +57,7 @@ static void		check_color(t_set *setting, int i, int j, int sens)
 void			bresenham_algorithm(t_set *setting, int line, int column,
 	int sens)
 {
-	while(1)
+	while (1)
 	{
 		if (setting->x0 > 0 && setting->x0 < WIDTH && setting->y0 > 0 &&
 		setting->y0 < HEIGHT)
@@ -66,7 +66,7 @@ void			bresenham_algorithm(t_set *setting, int line, int column,
 			setting->data[setting->x0 + setting->y0 * WIDTH] = setting->color;
 		}
 		if (setting->x0 == setting->x1 && setting->y0 == setting->y1)
-			break;
+			break ;
 		setting->e2 = setting->err;
 		if (setting->e2 > -(setting->dx))
 		{

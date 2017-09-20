@@ -6,7 +6,7 @@
 /*   By: orazafin <orazafin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/18 00:10:08 by orazafin          #+#    #+#             */
-/*   Updated: 2017/09/19 23:46:38 by orazafin         ###   ########.fr       */
+/*   Updated: 2017/09/20 14:19:28 by orazafin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ static void		apply_bresenham_for_each_column(t_set *setting, int i, int j,
 {
 	while (j < setting->column - 1)
 	{
-		initialize_bresenham(setting, i ,j, sens);
+		initialize_bresenham(setting, i, j, sens);
 		if (setting->map[i][j] >= setting->map[i][j + 1])
 		{
 			setting->flag = 1;

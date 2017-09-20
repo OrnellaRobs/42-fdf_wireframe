@@ -6,7 +6,7 @@
 /*   By: orazafin <orazafin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/19 22:47:38 by orazafin          #+#    #+#             */
-/*   Updated: 2017/09/20 00:46:30 by orazafin         ###   ########.fr       */
+/*   Updated: 2017/09/20 14:20:06 by orazafin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 static int		check_file(int fd)
 {
 	char buf[1];
+
 	if (read(fd, buf, 1) <= 0)
 		return (-1);
 	return (1);
