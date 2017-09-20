@@ -6,7 +6,7 @@
 /*   By: orazafin <orazafin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/08 13:20:36 by orazafin          #+#    #+#             */
-/*   Updated: 2017/09/20 14:11:51 by orazafin         ###   ########.fr       */
+/*   Updated: 2017/09/20 14:24:17 by orazafin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 # define FDFHEAD_H
 
 # include "./Libft/libft.h"
-# include <stdio.h> //A ENLEVER POUR LE RENDU!!!!!!!!!!!
 # include <fcntl.h>
 # include <sys/types.h>
 # include <sys/uio.h>
@@ -83,7 +82,7 @@ void				change_color_relief(int keycode, t_set *setting);
 void				change_color_flat(int keycode, t_set *setting);
 void				swap_color_between_relief_and_flat(int keycode,
 	t_set *setting);
-int			 		**get_map(int fd, t_set *setting);
+int					**get_map(int fd, t_set *setting);
 int					check_valid_map(char **tab);
 void				free_first_tab(char **tab);
 void				draw_segment_horizontally(t_set *setting);
@@ -111,4 +110,4 @@ void				decrease_relief(int keycode, t_set *setting);
 void				move_map(int keycode, t_set *setting);
 void				zoom(int keycode, t_set *setting);
 
-# endif
+#endif
