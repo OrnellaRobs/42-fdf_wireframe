@@ -6,7 +6,7 @@
 /*   By: orazafin <orazafin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/13 11:07:15 by orazafin          #+#    #+#             */
-/*   Updated: 2017/09/20 14:21:48 by orazafin         ###   ########.fr       */
+/*   Updated: 2017/09/21 13:29:42 by orazafin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ void		string_to_write_on_window(t_set *setting)
 	write_option_to_change_color_relief(setting);
 	write_on_window(setting, "\n", WHITE);
 	write_option_to_change_color_flat(setting);
-	setting->write_y += 450;
+	setting->write_y += 400;
 	write_other_options(setting);
 	initialize_write_x_and_write_y(setting);
 }
@@ -44,7 +44,7 @@ void		string_to_write_on_window(t_set *setting)
 int			proper_exit(t_set *setting)
 {
 	ft_bzero(setting, sizeof(t_set));
-	free_int_tab(setting);
+	// free_int_tab(setting);
 	exit(EXIT_SUCCESS);
 	return (0);
 }
@@ -52,10 +52,7 @@ int			proper_exit(t_set *setting)
 int			my_key_funct(int keycode, t_set *setting)
 {
 	if (keycode == 53)
-	{
-		free_int_tab(setting);
 		proper_exit(setting);
-	}
 	else
 	{
 		zoom(keycode, setting);

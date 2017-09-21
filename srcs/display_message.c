@@ -6,7 +6,7 @@
 /*   By: orazafin <orazafin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/19 22:59:01 by orazafin          #+#    #+#             */
-/*   Updated: 2017/09/19 23:47:43 by orazafin         ###   ########.fr       */
+/*   Updated: 2017/09/21 13:14:41 by orazafin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,11 +59,12 @@ void		write_other_options(t_set *setting)
 	write_on_window(setting, "OTHERS OPTIONS:", PINK);
 	write_on_window(setting, "Q -> INCREASE RELIEF", WHITE);
 	write_on_window(setting, "Z -> DECREASE RELIEF", WHITE);
+	write_on_window(setting, "shift -> SWAP COLOR", WHITE);
+	write_on_window(setting, "+ and - -> ZOOM", WHITE);
 	write_on_window(setting, "0 -> RESET", WHITE);
-	write_on_window(setting, "shift -> INVERSE COLOR", WHITE);
+	write_on_window(setting, "enter -> INVERSE COLOR", WHITE);
 	write_on_window(setting, "down arrow key -> MOVE DOWN", WHITE);
 	write_on_window(setting, "up arrow key -> MOVE UP", WHITE);
 	write_on_window(setting, "left arrow key -> MOVE LEFT", WHITE);
 	write_on_window(setting, "right arrow key -> MOVE RIGHT", WHITE);
-	write_on_window(setting, "shift -> SWAP COLOR", WHITE);
 }

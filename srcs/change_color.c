@@ -6,7 +6,7 @@
 /*   By: orazafin <orazafin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/19 23:48:55 by orazafin          #+#    #+#             */
-/*   Updated: 2017/09/20 14:16:58 by orazafin         ###   ########.fr       */
+/*   Updated: 2017/09/21 13:13:57 by orazafin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,6 @@ void		change_color_flat(int keycode, t_set *setting)
 
 void		swap_color_between_relief_and_flat(int keycode, t_set *setting)
 {
-	if (keycode == 258)
+	if (keycode == 36)
 		swap_color(setting);
 }

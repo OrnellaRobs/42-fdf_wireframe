@@ -6,7 +6,7 @@
 /*   By: orazafin <orazafin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/19 16:36:28 by orazafin          #+#    #+#             */
-/*   Updated: 2017/09/20 14:21:25 by orazafin         ###   ########.fr       */
+/*   Updated: 2017/09/21 13:30:10 by orazafin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,6 +110,6 @@ int				**get_map(int fd, t_set *setting)
 	}
 	final_tab[i] = NULL;
 	setting->column = setting->column_max;
-	free_first_tab(first_tab);
+	// free_first_tab(first_tab);
 	return (final_tab);
 }

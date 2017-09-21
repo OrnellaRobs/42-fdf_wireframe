@@ -6,7 +6,7 @@
 /*   By: orazafin <orazafin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/08 13:20:36 by orazafin          #+#    #+#             */
-/*   Updated: 2017/09/20 14:25:54 by orazafin         ###   ########.fr       */
+/*   Updated: 2017/09/21 13:38:32 by orazafin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@
 # include <stdlib.h>
 # include "minilibx_macos/mlx.h"
 
-# define SIZE_MAXI 1000
+# define SIZE_MAXI 10000000
 # define WIDTH 1200
 # define HEIGHT 990
 # define INTERVAL 30
