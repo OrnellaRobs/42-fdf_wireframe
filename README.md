@@ -1,5 +1,6 @@
 # 42-fdf_wireframe
-
+Description of the project in english: https://github.com/OrnellaRobs/42-fdf_wireframe/blob/master/fdf.en.pdf <br />
+Description du projet en francais: https://github.com/OrnellaRobs/42-fdf_wireframe/blob/master/fdf.fr.pdf <br /> <br />
 ![screen shot 2018-02-01 at 3 22 00 pm](https://user-images.githubusercontent.com/23618086/35683295-c8e03b08-0763-11e8-877e-0f98efffb4fb.png)
 ![screen shot 2018-02-01 at 3 14 01 pm](https://user-images.githubusercontent.com/23618086/35683291-c89dc5e8-0763-11e8-94e4-dec558f8d30d.png)
 ![screen shot 2018-02-01 at 3 15 25 pm](https://user-images.githubusercontent.com/23618086/35683293-c8b61f6c-0763-11e8-9704-a0e94e25811c.png)
